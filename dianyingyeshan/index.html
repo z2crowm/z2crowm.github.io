@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="电影野山 - 经典中国农村题材电影赏析与观影指南。提供影片背景、角色解析、经典台词及怀旧观影体验，重温上世纪八十年代中国电影艺术的独特魅力。">
+    <meta name="keywords" content="电影野山, 野山电影, 中国农村电影, 经典老电影, 八十年代电影, 影片赏析">
+    <title>电影野山 - 经典中国农村题材影片赏析与怀旧观影指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #e74c3c;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: #fff;
+            border-bottom: 2px solid #e74c3c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://picsum.photos/seed/forest/1200/600') center/cover;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #a93226;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        /* Film Info Grid */
+        .film-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .poster-frame {
+            background-color: var(--card-bg);
+            padding: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .poster-frame img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .film-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .meta-tags {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .tag {
+            background-color: #eee;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        .synopsis-box {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .synopsis-box h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .synopsis-box p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Cast Section */
+        .cast-section {
+            margin-bottom: 60px;
+        }
+
+        .cast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cast-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .cast-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cast-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .cast-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .cast-info h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .cast-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .film-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .poster-frame img {
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span>🎬</span> 电影野山
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#about">影片简介</a></li>
+                    <li><a href="#cast">演员表</a></li>
+                    <li><a href="#quotes">经典台词</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>重温经典：电影《野山》</h1>
+            <p>一部反映八十年代中国农村社会变革与人性的深刻力作，荣获金鸡奖最佳故事片。</p>
+            <a href="#about" class="btn">开始观影指南</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="section-title" id="about">
+            <h2>影片档案</h2>
+        </div>
+
+        <div class="film-info-grid">
+            <div class="poster-frame">
+                <img src="https://picsum.photos/seed/mountainfilm/400/600" alt="电影野山海报">
+            </div>
+            <div class="film-details">
+                <h3>野山</h3>
+                <div class="meta-tags">
+                    <span class="tag">1986年</span>
+                    <span class="tag">中国</span>
+                    <span class="tag">剧情</span>
+                    <span class="tag">农村</span>
+                    <span class="tag">爱情</span>
+                </div>
+                <div class="synopsis-box">
+                    <h4>剧情简介</h4>
+                    <p>影片讲述了改革开放初期，陕西省的一个偏僻山村。村民贾大山（颜丙谷 饰）与妻子桂兰（岳红 饰）因性格差异和生活方式的不同，婚姻生活一度陷入僵局。随着农村生产责任制的推行，两人在劳动和生活中逐渐磨合，最终找到了属于彼此的相处之道，展现了那个时代农民在变革中的困惑与成长。</p>
+                    <h4>导演与制作</h4>
+                    <p>本片由颜学恕执导，改编自贾平凹的同名小说。影片以质朴的镜头语言，细腻地刻画了西北农村的风土人情，具有浓厚的生活气息和时代特征。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" id="cast">
+            <h2>主要演员</h2>
+        </div>
+
+        <div class="cast-section">
+            <div class="cast-grid">
+                <div class="cast-card">
+                    <img src="https://picsum.photos/seed/actor1/300/400" alt="颜丙谷" class="cast-img">
+                    <div class="cast-info">
+                        <h5>颜丙谷</h5>
+                        <p>饰 贾大山</p>
+                    </div>
+                </div>
+                <div class="cast-card">
+                    <img src="https://picsum.photos/seed/actor2/300/400" alt="岳红" class="cast-img">
+                    <div class="cast-info">
+                        <h5>岳红</h5>
+                        <p>饰 桂兰</p>
+                    </div>
+                </div>
+                <div class="cast-card">
+                    <img src="https://picsum.photos/seed/actor3/300/400" alt="徐守道" class="cast-img">
+                    <div class="cast-info">
+                        <h5>徐守道</h5>
+                        <p>饰 贺旺</p>
+                    </div>
+                </div>
+                <div class="cast-card">
+                    <img src="https://picsum.photos/seed/actor4/300/400" alt="孙雅君" class="cast-img">
+                    <div class="cast-info">
+                        <h5>孙雅君</h5>
+                        <p>饰 贺凤</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-section" id="quotes">
+            <div class="quote-text">“人得有自知之明，不能总觉得自己是正确的。”</div>
+            <div class="quote-author">—— 影片台词赏析</div>
+        </div>
+
+        <div class="section-title" id="faq">
+            <h2>观影指南与FAQ</h2>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">《野山》获得了哪些奖项？</div>
+                <div class="faq-answer">
+                    <p>影片在1986年第6届中国电影金鸡奖上大放异彩，一举斩获了最佳故事片奖、最佳女主角奖（岳红）、最佳美术奖、最佳音乐奖和最佳录音奖等多个重要奖项，是当时中国电影艺术的里程碑式作品。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">这部电影适合什么年龄段的观众观看？</div>
+                <div class="faq-answer">
+                    <p>这是一部生活流题材的剧情片，没有激烈的冲突或少儿不宜的内容，适合所有年龄段的观众，特别是对八十年代中国农村生活、社会变迁以及家庭伦理感兴趣的人群。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">哪里可以观看《野山》的正版资源？</div>
+                <div class="faq-answer">
+                    <p>建议通过各大正规视频平台的“经典老电影”频道或国家图书馆的数字资源库进行查找。部分地方电视台的文化频道偶尔也会播放此片。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">影片中展现的农村生活具有真实性吗？</div>
+                <div class="faq-answer">
+                    <p>导演颜学恕是陕西人，影片大量取材于当地真实生活。剧组深入农村体验生活，使得影片中的方言、劳作场景和人物对话都极具生活质感，被誉为“中国农村生活的百科全书”之一。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于电影野山</h4>
+                    <p>本站致力于整理和展示经典中国电影资源，为影迷提供一个怀旧与交流的平台。我们尊重版权，推荐正版观影渠道。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#about">影片简介</a></li>
+                        <li><a href="#cast">演员表</a></li>
+                        <li><a href="#quotes">经典台词</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">贾平凹小说原作</a></li>
+                        <li><a href="#">金鸡奖获奖名单</a></li>
+                        <li><a href="#">八十年代电影回顾</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 电影野山赏析网. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 折叠交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
