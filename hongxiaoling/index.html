@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="洪小玲官方网站，汇集洪小玲个人简介、演艺经历、影视作品展示、写真图集及最新动态。提供关于洪小玲的全面资讯与粉丝互动平台。">
+    <meta name="keywords" content="洪小玲, 洪小玲简介, 洪小玲作品, 洪小玲写真, 洪小玲动态">
+    <title>洪小玲-演艺资料与影视作品展示平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c0392b;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --card-bg: #ffffff;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/hongxiaoling_hero/1920/800.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: var(--secondary-color);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .section-link {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .section-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Profile Section */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .profile-img-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 120%; /* Aspect Ratio */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .profile-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: #f1f2f6;
+            color: var(--text-light);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .profile-desc {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .profile-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .detail-item strong {
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Works Grid */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .work-thumb {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .work-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover .work-thumb img {
+            transform: scale(1.05);
+        }
+
+        .work-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .work-content {
+            padding: 15px;
+        }
+
+        .work-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .work-meta {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            margin-top: 60px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover img {
+            opacity: 0.8;
+        }
+
+        /* News List */
+        .news-list {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .news-item {
+            display: flex;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            min-width: 80px;
+            font-size: 14px;
+            color: var(--text-light);
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .news-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .news-content h3 a:hover {
+            color: var(--primary-color);
+        }
+
+        .news-excerpt {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-img-wrapper {
+                padding-bottom: 100%;
+            }
+
+            .profile-details {
+                grid-template-columns: 1fr;
+            }
+
+            .news-item {
+                flex-direction: column;
+            }
+
+            .news-date {
+                text-align: left;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #eee;
+                margin-bottom: 5px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Hong<span>Xiaoling</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#profile" class="active">个人简介</a></li>
+                    <li><a href="#works">影视作品</a></li>
+                    <li><a href="#gallery">写真图集</a></li>
+                    <li><a href="#news">最新动态</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>洪小玲</h1>
+                <p>多才多艺的演艺工作者，以其独特的气质与精湛的演技在演艺圈中备受瞩目。</p>
+                <div>
+                    <a href="#works" class="btn">浏览作品</a>
+                    <a href="#profile" class="btn btn-outline">了解更多</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Profile Section -->
+            <section id="profile" class="profile">
+                <div class="section-header">
+                    <h2 class="section-title">艺人简介</h2>
+                    <a href="#" class="section-link">查看完整资料 &rarr;</a>
+                </div>
+                <div class="profile-grid">
+                    <div class="profile-img-wrapper">
+                        <img src="https://picsum.photos/seed/hongxiaoling_profile/400/500.jpg" alt="洪小玲个人写真">
+                    </div>
+                    <div class="profile-info">
+                        <h2>洪小玲</h2>
+                        <div class="profile-tags">
+                            <span class="tag">台湾</span>
+                            <span class="tag">演员</span>
+                            <span class="tag">模特</span>
+                            <span class="tag">主持人</span>
+                        </div>
+                        <div class="profile-desc">
+                            洪小玲，中国台湾女演员、模特。曾获得多项模特大赛奖项，后转型进入演艺圈。她以清新的形象和自然的演技在多部偶像剧和电影中留下了深刻印象。在演艺事业之外，她也积极参与公益活动，致力于推广环保与健康生活方式。
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <strong>出生日期</strong>
+                                <span>1983年8月20日</span>
+                            </div>
+                            <div class="detail-item">
+                                <strong>身高</strong>
+                                <span>172 cm</span>
+                            </div>
+                            <div class="detail-item">
+                                <strong>星座</strong>
+                                <span>狮子座</span>
+                            </div>
+                            <div class="detail-item">
+                                <strong>经纪公司</strong>
+                                <span>华谊兄弟</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Works Section -->
+            <section id="works" class="works">
+                <div class="section-header">
+                    <h2 class="section-title">代表作品</h2>
+                    <a href="#" class="section-link">查看全部 &rarr;</a>
+                </div>
+                <div class="works-grid">
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/work1/400/600.jpg" alt="电视剧封面">
+                            <span class="work-badge">电视剧</span>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">爱在春天</h3>
+                            <p class="work-meta">饰演：姚小蝶</p>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/work2/400/600.jpg" alt="电视剧封面">
+                            <span class="work-badge">电视剧</span>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">胜女的代价</h3>
+                            <p class="work-meta">饰演：林晓红</p>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/work3/400/600.jpg" alt="电影封面">
+                            <span class="work-badge">电影</span>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">爱情万岁</h3>
+                            <p class="work-meta">饰演：配角</p>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/work4/400/600.jpg" alt="电视剧封面">
+                            <span class="work-badge">电视剧</span>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">胜女的代价2</h3>
+                            <p class="work-meta">饰演：林晓红</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="gallery-section">
+                <div class="section-header">
+                    <h2 class="section-title">精选写真</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://picsum.photos/seed/g1/400/400.jpg" alt="写真1"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/seed/g2/400/400.jpg" alt="写真2"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/seed/g3/400/400.jpg" alt="写真3"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/seed/g4/400/400.jpg" alt="写真4"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/seed/g5/400/400.jpg" alt="写真5"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/seed/g6/400/400.jpg" alt="写真6"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/seed/g7/400/400.jpg" alt="写真7"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/seed/g8/400/400.jpg" alt="写真8"></div>
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section id="news" class="news">
+                <div class="section-header">
+                    <h2 class="section-title">最新动态</h2>
+                    <a href="#" class="section-link">更多资讯 &rarr;</a>
+                </div>
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="news-date">2023-10-15</div>
+                        <div class="news-content">
+                            <h3><a href="#">洪小玲出席品牌慈善晚宴，呼吁关注儿童教育</a></h3>
+                            <p class="news-excerpt">近日，洪小玲受邀出席某知名品牌的慈善晚宴，在活动中她分享了对于公益事业的看法，并呼吁社会各界共同关注贫困地区儿童的教育问题...</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023-08-20</div>
+                        <div class="news-content">
+                            <h3><a href="#">洪小玲生日快乐：感恩一路有你们的支持</a></h3>
+                            <p class="news-excerpt">今天是洪小玲的40岁生日，她在社交媒体上晒出多张美照，感谢粉丝和亲友的祝福，并表示会继续努力为大家带来更好的作品。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023-05-10</div>
+                        <div class="news-content">
+                            <h3><a href="#">新剧开机仪式顺利举行，洪小玲饰演女主角</a></h3>
+                            <p class="news-excerpt">备受期待的新剧《梦想之城》正式开机，洪小玲确认出演女主角。导演表示，洪小玲的加入为角色注入了新的活力，期待她的精彩表现。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="font-size: 14px; line-height: 1.6;">洪小玲粉丝资讯站致力于为粉丝提供最及时、最全面的艺人动态、影视作品及相关资讯服务。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#profile">个人简介</a></li>
+                    <li><a href="#works">影视作品</a></li>
+                    <li><a href="#gallery">写真图集</a></li>
+                    <li><a href="#news">最新动态</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>邮箱：contact@example.com</li>
+                    <li>地址：北京市朝阳区某某大厦</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 洪小玲粉丝资讯站. All Rights Reserved. 本站内容仅供粉丝交流与资讯展示，非官方唯一指定网站。</p>
+        </div>
+    </footer>
+
+</body>
+              </html>
