@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="古装片在线观看与鉴赏平台，提供热门古装剧、经典武侠、历史传奇及宫廷权谋题材的影片推荐、剧情简介、演员阵容及观看指南。">
+    <meta name="keywords" content="好看的古装片,古装剧推荐,古装电影,武侠片,历史剧,在线观看">
+    <title>好看的古装片-经典古装影视推荐与在线鉴赏指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e2de2;
+            --secondary-color: #4a00e0;
+            --accent-gold: #d4af37;
+            --bg-dark: #0f1014;
+            --bg-card: #1a1c23;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(15, 16, 20, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            filter: blur(2px);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            padding-top: 2rem;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(142, 45, 226, 0.2);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(74, 0, 224, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 0, 224, 0.6);
+        }
+
+        /* Categories */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .view-all:hover {
+            color: var(--accent-gold);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            background: rgba(26, 28, 35, 0.8);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .category-card h3 {
+            font-size: 1.1rem;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .movie-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .movie-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .poster-wrapper {
+            position: relative;
+            padding-top: 140%; /* 5:7 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .poster-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .movie-card:hover .poster-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .rating-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--accent-gold);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-info {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-sm {
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            flex: 1;
+            text-align: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Features / Guide Section */
+        .guide-section {
+            background: linear-gradient(to bottom, var(--bg-dark), #16181e);
+            padding: 4rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-item {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .guide-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .guide-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            padding: 0 1rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-question {
+            color: var(--accent-gold);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0b0e;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">古韵视界</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">宫廷剧</a></li>
+                    <li><a href="#">武侠江湖</a></li>
+                    <li><a href="#">历史传奇</a></li>
+                    <li><a href="#">评分榜单</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">🔍 搜索片名</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="https://picsum.photos/seed/ancient_hero/1920/1080" alt="古装剧背景" class="hero-bg">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-tag">年度热门推荐</span>
+                    <h1>穿越千年时光<br>领略东方美学</h1>
+                    <p>汇集全网高质量古装片资源，从恢弘的宫廷权谋到侠骨柔情的江湖儿女，为您呈现最纯粹的中国古装影视盛宴。</p>
+                    <a href="#ranking" class="btn">立即开始观看</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Categories -->
+            <section id="categories">
+                <div class="section-title">
+                    <span>热门题材分类</span>
+                    <a href="#" class="view-all">查看全部 &rarr;</a>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <span class="cat-icon">👑</span>
+                        <h3>宫廷权谋</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">⚔️</span>
+                        <h3>武侠江湖</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">🏯</span>
+                        <h3>历史传奇</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">🎎</span>
+                        <h3>仙侠玄幻</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">📜</span>
+                        <h3>年代传奇</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">🎭</span>
+                        <h3>古装喜剧</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Ranking -->
+            <section id="ranking">
+                <div class="section-title">
+                    <span>高分必看榜单</span>
+                    <a href="#" class="view-all">查看完整榜单 &rarr;</a>
+                </div>
+                <div class="content-grid">
+                    <!-- Card 1 -->
+                    <article class="movie-card">
+                        <div class="poster-wrapper">
+                            <img src="https://picsum.photos/seed/mv1/400/560" alt="古装剧海报">
+                            <div class="rating-badge">9.2分</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">长安十二时辰</h3>
+                            <div class="card-meta">
+                                <span>2021</span>
+                                <span>古装/悬疑</span>
+                            </div>
+                            <p class="card-desc">上元节前夕，长安城陷入死局，少卿李必必须在十二个时辰内拯救整座城市，节奏紧凑，服化道精美。</p>
+                            <div class="card-actions">
+                                <a href="#" class="btn">立即播放</a>
+                                <a href="#" class="btn btn-outline">收藏</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="movie-card">
+                        <div class="poster-wrapper">
+                            <img src="https://picsum.photos/seed/mv2/400/560" alt="古装剧海报">
+                            <div class="rating-badge">9.0分</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">琅琊榜</h3>
+                            <div class="card-meta">
+                                <span>2015</span>
+                                <span>权谋/励志</span>
+                            </div>
+                            <p class="card-desc">麒麟才子梅长苏以病弱之躯拨开重重迷雾、智博奸佞，为昭雪多年冤案、扶持新君所进行的一系列斗争。</p>
+                            <div class="card-actions">
+                                <a href="#" class="btn">立即播放</a>
+                                <a href="#" class="btn btn-outline">收藏</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="movie-card">
+                        <div class="poster-wrapper">
+                            <img src="https://picsum.photos/seed/mv3/400/560" alt="古装剧海报">
+                            <div class="rating-badge">8.8分</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">知否知否应是绿肥红瘦</h3>
+                            <div class="card-meta">
+                                <span>2018</span>
+                                <span>家庭/古装</span>
+                            </div>
+                            <p class="card-desc">北宋官宦家庭少女明兰的成长故事，展现了古代大家族的日常生活与人性百态，温馨治愈。</p>
+                            <div class="card-actions">
+                                <a href="#" class="btn">立即播放</a>
+                                <a href="#" class="btn btn-outline">收藏</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="movie-card">
+                        <div class="poster-wrapper">
+                            <img src="https://picsum.photos/seed/mv4/400/560" alt="古装剧海报">
+                            <div class="rating-badge">8.5分</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">甄嬛传</h3>
+                            <div class="card-meta">
+                                <span>2011</span>
+                                <span>宫廷/情感</span>
+                            </div>
+                            <p class="card-desc">讲述了少女甄嬛从不谙世事的少女到步步为营的太后的心路历程，是古装剧的巅峰之作。</p>
+                            <div class="card-actions">
+                                <a href="#" class="btn">立即播放</a>
+                                <a href="#" class="btn btn-outline">收藏</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                     <!-- Card 5 -->
+                     <article class="movie-card">
+                        <div class="poster-wrapper">
+                            <img src="https://picsum.photos/seed/mv5/400/560" alt="古装剧海报">
+                            <div class="rating-badge">8.9分</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">鹤唳华亭</h3>
+                            <div class="card-meta">
+                                <span>2019</span>
+                                <span>权谋/古装</span>
+                            </div>
+                            <p class="card-desc">皇太子萧定权在朝堂、亲情与爱情之间的艰难抉择，剧情跌宕起伏，演技精湛。</p>
+                            <div class="card-actions">
+                                <a href="#" class="btn">立即播放</a>
+                                <a href="#" class="btn btn-outline">收藏</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="movie-card">
+                        <div class="poster-wrapper">
+                            <img src="https://picsum.photos/seed/mv6/400/560" alt="古装剧海报">
+                            <div class="rating-badge">8.7分</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">庆余年</h3>
+                            <div class="card-meta">
+                                <span>2019</span>
+                                <span>穿越/古装</span>
+                            </div>
+                            <p class="card-desc">背负身世之谜的少年范闲，在家族的阴谋与江湖的险恶中，逐渐揭开真相，守护所爱之人。</p>
+                            <div class="card-actions">
+                                <a href="#" class="btn">立即播放</a>
+                                <a href="#" class="btn btn-outline">收藏</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Guide Section -->
+            <section class="guide-section">
+                <div class="section-title">
+                    <span>古装片鉴赏指南</span>
+                </div>
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <h3>如何选择适合的古装剧？</h3>
+                        <p>古装剧题材繁多，建议根据个人喜好选择。喜欢权谋斗争可选《琅琊榜》《庆余年》；喜欢温馨日常可看《知否》；追求视觉盛宴可关注《长安十二时辰》。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>古装剧服化道的重要性</h3>
+                        <p>优秀的古装剧在服化道上往往考究严谨，从发型、发饰到服饰的材质与纹样，都能体现历史背景和人物身份，是提升观影沉浸感的关键。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>观看渠道与版权提示</h3>
+                        <p>支持正版影视平台，选择正规渠道观看，不仅能获得高清画质，还能确保演员的表演原汁原味，不受删减影响。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="faq-section">
+                <div class="section-title">
+                    <span>常见问题解答</span>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">古装片适合全年龄段观看吗？ <span>+</span></div>
+                    <div class="faq-answer">大部分古装剧适合全年龄段观看，但部分涉及宫廷斗争或暴力场面的剧集（如《甄嬛传》部分情节）建议青少年在家长陪同下观看。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">古装剧和历史史实有关吗？ <span>+</span></div>
+                    <div class="faq-answer">古装剧属于影视剧创作，虽然部分以历史人物或事件为原型，但为了艺术效果，往往会进行改编、虚构或戏剧化处理，不可完全等同于历史事实。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">哪里可以找到高清的古装片资源？ <span>+</span></div>
+                    <div class="faq-answer">推荐各大正规视频平台搜索片名，通常都有高清画质供会员观看。此外，专业的影视数据库网站也提供详细的剧集信息。</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>古韵视界致力于为影视爱好者提供最优质的古装片推荐与鉴赏服务，打造沉浸式的古装文化体验空间。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">宫廷剧</a></li>
+                        <li><a href="#">武侠片</a></li>
+                        <li><a href="#">仙侠剧</a></li>
+                        <li><a href="#">历史剧</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 古韵视界 - 好看的古装片推荐平台. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Simple Search Interaction (Visual only)
+        document.querySelector('.search-btn').addEventListener('click', () => {
+            const query = prompt("请输入您想查找的古装片片名：");
+            if(query) {
+                alert("正在为您搜索：" + query);
+            }
+        });
+    </script>
+</body>
+                              </html>
