@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="动画背景素材资源站，提供高清PNG透明背景、矢量插画、动态GIF及3D渲染场景。支持商用授权、无水印下载，涵盖二次元、极简、赛博朋克等多种风格，满足UI设计、视频剪辑及网页开发需求。">
+    <meta name="keywords" content="动画背景,素材下载,透明背景,UI设计,插画素材,视频背景">
+    <title>动画背景-高清素材下载与商用授权资源库</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        ul { list-style: none; }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span { color: var(--text-main); }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active { color: var(--primary); }
+
+        .btn-subscribe {
+            background: var(--text-main);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .btn-subscribe:hover { background: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #e0e7ff 0%, #fae8ff 100%);
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            box-shadow: var(--shadow);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus { border-color: var(--primary); }
+
+        .search-box button {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            height: calc(100% - 12px);
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 0 24px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover { background: var(--primary-dark); }
+
+        /* Filters */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-chip {
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-chip:hover, .filter-chip.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Grid */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 3px;
+            display: block;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 200px;
+            background-color: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img-wrapper img { transform: scale(1.05); }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .badge.transparent { background: rgba(16, 185, 129, 0.8); }
+
+        .card-content {
+            padding: 16px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        .btn-download {
+            padding: 6px 12px;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover { background: #dbeafe; }
+
+        /* Features */
+        .features {
+            background: white;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: #e0e7ff;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 { margin-bottom: 10px; }
+        .feature-item p { color: var(--text-sub); font-size: 0.95rem; }
+
+        /* CTA */
+        .cta-section {
+            background: var(--text-main);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+
+        .cta-section h2 { margin-bottom: 16px; }
+        .cta-section p { color: #94a3b8; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover { background: var(--primary-dark); }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a { margin-left: 20px; }
+        .footer-links a:hover { color: var(--primary); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            nav { display: none; } /* Simplified for mobile */
+            .header-inner { justify-content: center; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            <span>AniBg</span>素材库
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">透明背景</a></li>
+                <li><a href="#">矢量插画</a></li>
+                <li><a href="#">动态GIF</a></li>
+                <li><a href="#">商业授权</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-subscribe">VIP会员</a>
+    </div>
+</header>
+
+<main class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>为您的创作寻找完美的动画背景</h1>
+        <p>海量高清PNG、矢量图及动态素材，支持商用授权，一键下载，即刻提升视觉品质。</p>
+        <form class="search-box" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="搜索关键词，例如：赛博朋克、极简、二次元...">
+            <button type="submit">搜索</button>
+        </form>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+        <div class="filter-chip active">全部</div>
+        <div class="filter-chip">二次元</div>
+        <div class="filter-chip">扁平化</div>
+        <div class="filter-chip">3D渲染</div>
+        <div class="filter-chip">科技感</div>
+        <div class="filter-chip">自然风景</div>
+        <div class="filter-chip">透明背景(PNG)</div>
+    </section>
+
+    <!-- Featured Gallery -->
+    <section>
+        <h2 class="section-title">本周精选动画背景</h2>
+        <div class="gallery-grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/cyber/400/300" alt="赛博朋克城市背景">
+                    <span class="badge transparent">PNG</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">霓虹赛博朋克城市</h3>
+                    <div class="card-meta">
+                        <span>分辨率: 1920x1080</span>
+                        <span>格式: PNG</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price-tag">免费</span>
+                        <a href="#" class="btn-download">立即下载</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/anime/400/300" alt="动漫风格插画背景">
+                    <span class="badge">插画</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">唯美樱花动漫风</h3>
+                    <div class="card-meta">
+                        <span>分辨率: 4000x3000</span>
+                        <span>格式: JPG</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price-tag">¥9.9</span>
+                        <a href="#" class="btn-download">购买授权</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/abstract/400/300" alt="极简几何背景">
+                    <span class="badge transparent">PNG</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">极简几何线条</h3>
+                    <div class="card-meta">
+                        <span>分辨率: 1080x1920</span>
+                        <span>格式: PNG</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price-tag">免费</span>
+                        <a href="#" class="btn-download">立即下载</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/tech/400/300" alt="科技感UI背景">
+                    <span class="badge transparent">PNG</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">科技感深空UI</h3>
+                    <div class="card-meta">
+                        <span>分辨率: 1920x1080</span>
+                        <span>格式: PNG</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price-tag">免费</span>
+                        <a href="#" class="btn-download">立即下载</a>
+                    </div>
+                </div>
+            </article>
+
+             <!-- Card 5 -->
+             <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/cartoon/400/300" alt="卡通风格背景">
+                    <span class="badge">矢量</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">可爱卡通云朵</h3>
+                    <div class="card-meta">
+                        <span>分辨率: 可缩放</span>
+                        <span>格式: AI</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price-tag">¥19.9</span>
+                        <a href="#" class="btn-download">购买授权</a>
+                    </div>
+                </div>
+            </article>
+
+             <!-- Card 6 -->
+             <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/gradient/400/300" alt="渐变色背景">
+                    <span class="badge transparent">PNG</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">梦幻流体渐变</h3>
+                    <div class="card-meta">
+                        <span>分辨率: 1080x1080</span>
+                        <span>格式: PNG</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price-tag">免费</span>
+                        <a href="#" class="btn-download">立即下载</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2 class="section-title">为什么选择我们</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <h3>正版商用授权</h3>
+                <p>所有素材均拥有明确授权，可放心用于商业项目，规避版权风险。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </div>
+                <h3>高清无损下载</h3>
+                <p>提供4K超高清及透明PNG格式，满足各种屏幕显示与图层合成需求。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                </div>
+                <h3>更新速度快</h3>
+                <p>每日新增数百组高质量动画背景，紧跟设计潮流与热门风格。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>立即加入，开启创作之旅</h2>
+        <p>注册会员即可免费下载今日精选的10组背景素材，解锁更多高级功能。</p>
+        <a href="#" class="btn-primary">免费注册</a>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <div>
+            &copy; 2023 AniBg 动画背景素材库. All rights reserved.
+        </div>
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">版权声明</a>
+            <a href="#">联系方式</a>
+            <a href="#">帮助中心</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 简单的交互逻辑：筛选按钮点击效果
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+        chip.addEventListener('click', function() {
+            document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
