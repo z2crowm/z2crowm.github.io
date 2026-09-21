@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="80电子书 - 提供经典文学、历史传记、社科经管类电子书下载与在线阅读资源，涵盖80年代文学名著及当代精选书籍。">
+    <meta name="keywords" content="80电子书,电子书下载,经典文学,电子书资源,在线阅读">
+    <title>80电子书-经典文学与精选书籍下载平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #f0f2f5;
+            border-radius: 20px;
+            padding: 4px 12px;
+            width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            flex: 1;
+            padding: 6px 8px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 24px;
+            color: #f1c40f;
+        }
+
+        .stat-item span {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .view-all:hover {
+            color: var(--accent-color);
+        }
+
+        /* Book Grid */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 240px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+        }
+
+        .book-info {
+            padding: 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .book-author {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .book-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .tag {
+            background: #f0f2f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Category Grid */
+        .category-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .category-item:hover {
+            border-color: var(--accent-color);
+            background-color: #fff5f5;
+        }
+
+        .category-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .category-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* Download Guide */
+        .guide-section {
+            background: #eef2f7;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .guide-step {
+            display: flex;
+            gap: 16px;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            max-width: 300px;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">80<span>电子书</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">文学小说</a></li>
+                    <li><a href="#">历史传记</a></li>
+                    <li><a href="#">社科经管</a></li>
+                    <li><a href="#">技术编程</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索书名、作者...">
+                <button type="button">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>80电子书：沉淀智慧，阅读经典</h1>
+            <p>汇聚海量正版电子书资源，涵盖文学名著、历史传记、商业经管及专业技术领域。提供PDF、EPUB等格式下载，让阅读更自由。</p>
+            <button style="background: #f1c40f; color: #2c3e50; border: none; padding: 12px 30px; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">开始阅读</button>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <strong>50,000+</strong>
+                    <span>藏书总量</span>
+                </div>
+                <div class="stat-item">
+                    <strong>1000+</strong>
+                    <span>每日更新</span>
+                </div>
+                <div class="stat-item">
+                    <strong>100%</strong>
+                    <span>安全纯净</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 分类导航 -->
+        <section class="category-section">
+            <div class="category-grid">
+                <div class="category-item">
+                    <div class="category-icon">📚</div>
+                    <div class="category-name">文学小说</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🏛️</div>
+                    <div class="category-name">历史传记</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">💼</div>
+                    <div class="category-name">商业经管</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">💻</div>
+                    <div class="category-name">技术编程</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🎓</div>
+                    <div class="category-name">教材考试</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🧠</div>
+                    <div class="category-name">心理成长</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门推荐 -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">本周热门推荐</h2>
+                <a href="#" class="view-all">查看更多 &rarr;</a>
+            </div>
+            <div class="book-grid">
+                <article class="book-card">
+                    <a href="#" class="book-cover">
+                        <img src="https://picsum.photos/seed/book1/200/280" alt="百年孤独封面">
+                    </a>
+                    <div class="book-info">
+                        <h3 class="book-title">百年孤独</h3>
+                        <p class="book-author">加西亚·马尔克斯</p>
+                        <div class="book-meta">
+                            <span class="tag">经典</span>
+                            <span>2.3MB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <a href="#" class="book-cover">
+                        <img src="https://picsum.photos/seed/book2/200/280" alt="人类简史封面">
+                    </a>
+                    <div class="book-info">
+                        <h3 class="book-title">人类简史：从动物到上帝</h3>
+                        <p class="book-author">尤瓦尔·赫拉利</p>
+                        <div class="book-meta">
+                            <span class="tag">畅销</span>
+                            <span>15MB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <a href="#" class="book-cover">
+                        <img src="https://picsum.photos/seed/book3/200/280" alt="原则封面">
+                    </a>
+                    <div class="book-info">
+                        <h3 class="book-title">原则：生活和工作</h3>
+                        <p class="book-author">瑞·达利欧</p>
+                        <div class="book-meta">
+                            <span class="tag">经管</span>
+                            <span>8.1MB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <a href="#" class="book-cover">
+                        <img src="https://picsum.photos/seed/book4/200/280" alt="三体封面">
+                    </a>
+                    <div class="book-info">
+                        <h3 class="book-title">三体全集</h3>
+                        <p class="book-author">刘慈欣</p>
+                        <div class="book-meta">
+                            <span class="tag">科幻</span>
+                            <span>25MB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <a href="#" class="book-cover">
+                        <img src="https://picsum.photos/seed/book5/200/280" alt="穷查理宝典封面">
+                    </a>
+                    <div class="book-info">
+                        <h3 class="book-title">穷查理宝典</h3>
+                        <p class="book-author">查理·芒格</p>
+                        <div class="book-meta">
+                            <span class="tag">传记</span>
+                            <span>6.5MB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <a href="#" class="book-cover">
+                        <img src="https://picsum.photos/seed/book6/200/280" alt="深度工作封面">
+                    </a>
+                    <div class="book-info">
+                        <h3 class="book-title">深度工作</h3>
+                        <p class="book-author">卡尔·纽波特</p>
+                        <div class="book-meta">
+                            <span class="tag">效率</span>
+                            <span>4.2MB</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 下载指南 -->
+        <section class="guide-section">
+            <div class="section-header" style="border:none; padding-bottom:0; margin-bottom:20px;">
+                <h2 class="section-title">如何下载与阅读</h2>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>选择书籍</h3>
+                        <p>在分类或搜索栏中找到您感兴趣的书籍，点击封面进入详情页。</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>获取资源</h3>
+                        <p>点击“立即下载”按钮，系统将自动为您生成下载链接或提供在线预览。</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>本地阅读</h3>
+                        <p>将下载的文件保存至本地，使用Kindle、iBooks或阅读器App进行阅读。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>80电子书</h2>
+                    <p>致力于为读者提供免费、高质量的电子书资源。我们尊重版权，所有资源仅供个人学习交流使用，请于下载后24小时内删除。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">中文小说</a></li>
+                        <li><a href="#">英文原版</a></li>
+                        <li><a href="#">技术文档</a></li>
+                        <li><a href="#">历史人文</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>阅读工具</h4>
+                    <ul>
+                        <li><a href="#">Kindle下载</a></li>
+                        <li><a href="#">PDF阅读器</a></li>
+                        <li><a href="#">EPUB转换</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 80电子书 版权所有. 本站资源来源于网络，版权归原作者所有。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
