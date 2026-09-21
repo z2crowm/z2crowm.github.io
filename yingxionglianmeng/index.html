@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英雄联盟图标 - 官方皮肤图鉴与高清素材下载平台</title>
+    <meta name="description" content="英雄联盟图标平台提供LOL官方及玩家自制英雄、皮肤、符文、天赋高清图标下载。包含全英雄图标库、赛季皮肤展示、游戏内资源整理及图标使用教程。">
+    <meta name="keywords" content="英雄联盟图标,LOL图标,英雄图标,皮肤图标,符文图标,英雄联盟素材,LOL高清图">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #adadad;
+            --accent-color: #c8aa6e;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #f0f0f0;
+            --text-sub: #b0b0b0;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, var(--dark-bg) 100%), 
+                        url('https://picsum.photos/seed/lolhero/1920/600') center/cover;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #d4af7a;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        /* Icon Grid */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 16px;
+        }
+
+        .icon-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .icon-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--accent-color);
+        }
+
+        .icon-img {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            background-color: #000;
+        }
+
+        .icon-name {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Categories */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-item {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .category-item:hover {
+            background-color: #252525;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: var(--accent-color);
+        }
+
+        .category-name {
+            font-weight: 600;
+        }
+
+        /* Features */
+        .features {
+            background-color: #181818;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .feature-item p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Download Section */
+        .download-section {
+            text-align: center;
+            background: linear-gradient(45deg, #1e1e1e, #2a2a2a);
+            border-radius: 12px;
+            padding: 60px 20px;
+        }
+
+        .download-icon-large {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 0.85rem;
+            padding-top: 30px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplified mobile nav for demo */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                </svg>
+                LOL<span>Icons</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">英雄图标</a></li>
+                    <li><a href="#">皮肤图鉴</a></li>
+                    <li><a href="#">符文天赋</a></li>
+                    <li><a href="#">工具下载</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>英雄联盟图标资源库</h1>
+                <p>汇集全服最新英雄、皮肤及符文高清图标。支持PNG透明背景下载，为您的个人主页或游戏设置提供完美素材。</p>
+                <a href="#featured" class="cta-button">开始浏览</a>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门分类</h2>
+                <a href="#" class="view-all">查看全部分类 &rarr;</a>
+            </div>
+            <div class="category-grid">
+                <div class="category-item">
+                    <div class="category-icon">⚔️</div>
+                    <div class="category-name">英雄头像</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">✨</div>
+                    <div class="category-name">限定皮肤</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">📜</div>
+                    <div class="category-name">符文图标</div>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🏆</div>
+                    <div class="category-name">赛季图标</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" class="container">
+            <div class="section-header">
+                <h2 class="section-title">最新收录图标</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="icon-grid">
+                <!-- Hero Icons -->
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/ahri/128/128" alt="阿狸头像" class="icon-img">
+                    <div class="icon-name">阿狸 (默认)</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/darius/128/128" alt="德莱厄斯头像" class="icon-img">
+                    <div class="icon-name">德莱厄斯 (默认)</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/jinx/128/128" alt="金克丝头像" class="icon-img">
+                    <div class="icon-name">金克丝 (默认)</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/yasuo/128/128" alt="亚索头像" class="icon-img">
+                    <div class="icon-name">亚索 (默认)</div>
+                </div>
+                <!-- Skin Icons -->
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/ahri_s1/128/128" alt="阿狸星之守护者" class="icon-img">
+                    <div class="icon-name">阿狸 星之守护者</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/darius_s1/128/128" alt="德莱厄斯至高之拳" class="icon-img">
+                    <div class="icon-name">德莱厄斯 至高之拳</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/jinx_s1/128/128" alt="金克丝星之守护者" class="icon-img">
+                    <div class="icon-name">金克丝 星之守护者</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/yasuo_s1/128/128" alt="亚索源计划" class="icon-img">
+                    <div class="icon-name">亚索 源计划</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">符文与天赋图标</h2>
+                <a href="#" class="view-all">查看符文库 &rarr;</a>
+            </div>
+            <div class="icon-grid">
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/runes1/128/128" alt="征服者" class="icon-img">
+                    <div class="icon-name">征服者</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/runes2/128/128" alt="精密" class="icon-img">
+                    <div class="icon-name">精密系</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/runes3/128/128" alt="坚决" class="icon-img">
+                    <div class="icon-name">坚决系</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/runes4/128/128" alt="启迪" class="icon-img">
+                    <div class="icon-name">启迪系</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/runes5/128/128" alt="坚决" class="icon-img">
+                    <div class="icon-name">坚决</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/runes6/128/128" alt="主宰" class="icon-img">
+                    <div class="icon-name">主宰</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/runes7/128/128" alt="巫术" class="icon-img">
+                    <div class="icon-name">巫术</div>
+                </div>
+                <div class="icon-card">
+                    <img src="https://picsum.photos/seed/runes8/128/128" alt="灵能" class="icon-img">
+                    <div class="icon-name">灵能</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">使用指南</h2>
+            </div>
+            <div class="feature-list">
+                <article class="feature-item">
+                    <h3>如何设置游戏内图标</h3>
+                    <p>进入游戏客户端，点击个人资料头像，选择“更换头像”或“更换头像框”，从本地文件中选择已下载的PNG格式图标即可。</p>
+                </article>
+                <article class="feature-item">
+                    <h3>图标格式要求</h3>
+                    <p>为了保证在游戏中显示清晰且不出现锯齿，建议下载 128x128 或 256x256 像素的 PNG 透明背景图片。</p>
+                </article>
+                <article class="feature-item">
+                    <h3>资源获取来源</h3>
+                    <p>本站资源整理自官方客户端提取及玩家社区分享，部分为玩家自制同人图标。请尊重设计师版权，仅供个人装饰使用。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="container download-section">
+            <img src="https://picsum.photos/seed/lolicon/256/256" alt="LOL Logo" class="download-icon-large">
+            <h2>立即下载最新赛季图标</h2>
+            <p style="color: var(--text-sub); margin: 10px 0 30px;">获取2024赛季限定头像框与图标</p>
+            <a href="#" class="cta-button">下载资源包</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>LOL Icons</h4>
+                    <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.6;">
+                        致力于为英雄联盟玩家提供最全面、最清晰的图标资源分享平台。涵盖全英雄、全皮肤及符文天赋图鉴。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">英雄列表</a></li>
+                        <li><a href="#">皮肤图鉴</a></li>
+                        <li><a href="#">符文攻略</a></li>
+                        <li><a href="#">工具箱</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">投稿建议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注动态</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博话题</a></li>
+                        <li><a href="#">Discord社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 LOL Icons Resource. All rights reserved. 本站资源仅供学习交流，与Riot Games无任何关联。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
