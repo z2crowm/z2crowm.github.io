@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="千变网 - 探索无限创意与时尚潮流的在线社区。提供创意设计灵感、时尚穿搭指南、生活美学分享及热门话题讨论，打造属于你的个性化表达空间。">
+    <meta name="keywords" content="千变,创意,时尚,生活,美学,潮流,社区">
+    <title>千变-创意灵感与时尚生活社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --primary-dark: #524ad1;
+            --secondary: #FF6584;
+            --bg-body: #F9FAFC;
+            --bg-card: #FFFFFF;
+            --text-main: #1F2937;
+            --text-sub: #6B7280;
+            --border: #E5E7EB;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --container: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-sub);
+            font-size: 16px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--border);
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+        }
+
+        /* Category Grid */
+        .categories {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(108, 99, 255, 0.1);
+        }
+
+        .cat-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        /* Content Grid */
+        .content-section {
+            padding: 40px 0 80px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        .main-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .post-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            transition: transform 0.3s;
+        }
+
+        .post-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .post-image {
+            width: 240px;
+            flex-shrink: 0;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .post-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 4px 10px;
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .tag.outfit { background: rgba(255, 101, 132, 0.1); color: var(--secondary); }
+        .tag.tech { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+
+        .post-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .post-excerpt {
+            color: var(--text-sub);
+            font-size: 15px;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #9CA3AF;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .sidebar-widget {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hot-list li {
+            margin-bottom: 16px;
+        }
+
+        .hot-list a {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .hot-list a:hover {
+            color: var(--primary);
+        }
+
+        .hot-num {
+            font-size: 18px;
+            font-weight: 800;
+            color: #E5E7EB;
+            font-style: italic;
+        }
+
+        .hot-list li:nth-child(1) .hot-num { color: #FF4757; }
+        .hot-list li:nth-child(2) .hot-num { color: #FFA502; }
+        .hot-list li:nth-child(3) .hot-num { color: #2ED573; }
+
+        .trend-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .trend-rank {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-sub);
+            width: 24px;
+            text-align: center;
+        }
+
+        .trend-info h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .trend-info span {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        /* Features Section */
+        .features {
+            background: #fff;
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon-box {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 16px;
+            background: #F3F4F6;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .feature-item h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #F3F4F6;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: #9CA3AF;
+            font-size: 14px;
+            margin-top: 16px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #9CA3AF;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            color: #6B7280;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .header-actions .btn { display: none; }
+            .hero h1 { font-size: 36px; }
+            .post-card { flex-direction: column; }
+            .post-image { width: 100%; height: 200px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                    <path d="M8.5 8.5v.01"></path>
+                    <path d="M16 15.5v.01"></path>
+                    <path d="M12 12v.01"></path>
+                </svg>
+                千变<span>创意社区</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">灵感库</a>
+                <a href="#">穿搭指南</a>
+                <a href="#">数码评测</a>
+                <a href="#">生活方式</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">发布创意</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索千变万化的生活美学</h1>
+                <p>汇聚全球创意灵感，记录你的每一次风格转变。无论是时尚穿搭、数码科技还是生活方式，这里都有你想要的答案。</p>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="搜索灵感、穿搭风格或产品...">
+                    <button class="btn btn-primary">搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">热门分类</h2>
+                    <a href="#" class="section-more">查看全部 &rarr;</a>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="cat-icon">👗</div>
+                        <h3>时尚穿搭</h3>
+                        <p>每日潮流趋势解析</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-icon">💻</div>
+                        <h3>数码科技</h3>
+                        <p>硬核评测与技巧</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-icon">🎨</div>
+                        <h3>平面设计</h3>
+                        <p>PS教程与创意分享</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-icon">🏠</div>
+                        <h3>家居生活</h3>
+                        <p>极简与温馨的平衡</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-icon">✈️</div>
+                        <h3>旅行摄影</h3>
+                        <p>世界各地的光影</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-icon">☕</div>
+                        <h3>美食探店</h3>
+                        <p>味蕾的千变体验</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">✨</div>
+                        <h4>海量灵感</h4>
+                        <p>每日更新，覆盖生活各个角落</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🤝</div>
+                        <h4>创作者社区</h4>
+                        <p>连接志同道合的创意伙伴</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">📱</div>
+                        <h4>多端同步</h4>
+                        <p>随时随地记录你的千变创意</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🎯</div>
+                        <h4>精准推荐</h4>
+                        <p>算法匹配你的个人兴趣偏好</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <!-- Feed -->
+                    <div class="main-feed">
+                        <div class="section-header">
+                            <h2 class="section-title">最新动态</h2>
+                        </div>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <img src="https://picsum.photos/seed/fashion1/400/300" alt="秋季穿搭搭配">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-tags">
+                                    <span class="tag outfit">穿搭</span>
+                                    <span class="tag">秋季</span>
+                                </div>
+                                <h3 class="post-title"><a href="#">秋季复古风穿搭指南：如何用基础款穿出高级感</a></h3>
+                                <p class="post-excerpt">秋季换季不仅是衣物的更替，更是风格的重组。本文将为你解析如何利用大地色系和复古单品，打造属于你的独特秋日氛围。</p>
+                                <div class="post-meta">
+                                    <div class="author">
+                                        <img src="https://picsum.photos/seed/u1/50/50" class="author-avatar" alt="User">
+                                        <span>时尚达人小美</span>
+                                    </div>
+                                    <span>2小时前 · 1.2k 浏览</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <img src="https://picsum.photos/seed/tech1/400/300" alt="极简桌面布置">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-tags">
+                                    <span class="tag tech">数码</span>
+                                    <span class="tag">桌面</span>
+                                </div>
+                                <h3 class="post-title"><a href="#">打造沉浸式工作台：从灯光到桌搭的千变细节</a></h3>
+                                <p class="post-excerpt">工作台不仅仅是工具的堆砌，更是效率与心情的投射。分享一套低成本、高颜值的极简桌面搭建方案，让你的工作空间焕然一新。</p>
+                                <div class="post-meta">
+                                    <div class="author">
+                                        <img src="https://picsum.photos/seed/u2/50/50" class="author-avatar" alt="User">
+                                        <span>数码控老王</span>
+                                    </div>
+                                    <span>5小时前 · 856 浏览</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <img src="https://picsum.photos/seed/design1/400/300" alt="海报设计案例">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-tags">
+                                    <span class="tag">设计</span>
+                                    <span class="tag">海报</span>
+                                </div>
+                                <h3 class="post-title"><a href="#">平面设计进阶：色彩心理学在海报中的应用</a></h3>
+                                <p class="post-excerpt">为什么同样的文字用不同的颜色效果截然不同？深入探讨色彩心理学，教你如何通过色彩组合引导观众情绪，提升设计表现力。</p>
+                                <div class="post-meta">
+                                    <div class="author">
+                                        <img src="https://picsum.photos/seed/u3/50/50" class="author-avatar" alt="User">
+                                        <span>创意总监Lisa</span>
+                                    </div>
+                                    <span>1天前 · 2.3k 浏览</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <div style="text-align: center;">
+                            <button class="btn btn-outline" style="width: 100%;">加载更多内容</button>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">本周热门话题</h3>
+                            <ul class="hot-list">
+                                <li>
+                                    <a href="#">
+                                        <span class="hot-num">01</span>
+                                        <span>#复古胶片感滤镜教程#</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="hot-num">02</span>
+                                        <span>#小户型收纳灵感#</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="hot-num">03</span>
+                                        <span>#通勤穿搭不重样#</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="hot-num">04</span>
+                                        <span>#AI绘画工具测评#</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="hot-num">05</span>
+                                        <span>#周末探店清单#</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">趋势榜单</h3>
+                            <div class="trend-list">
+                                <div class="trend-item">
+                                    <div class="trend-rank">1</div>
+                                    <div class="trend-info">
+                                        <h4>多巴胺配色在服饰中的应用</h4>
+                                        <span>阅读量 45k+</span>
+                                    </div>
+                                </div>
+                                <div class="trend-item">
+                                    <div class="trend-rank">2</div>
+                                    <div class="trend-info">
+                                        <h4>2024年极简主义家具趋势</h4>
+                                        <span>阅读量 38k+</span>
+                                    </div>
+                                </div>
+                                <div class="trend-item">
+                                    <div class="trend-rank">3</div>
+                                    <div class="trend-info">
+                                        <h4>如何用手机拍出电影感</h4>
+                                        <span>阅读量 32k+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-widget" style="background: linear-gradient(135deg, #6C63FF 0%, #FF6584 100%); color: white;">
+                            <h3 class="widget-title" style="border-color: rgba(255,255,255,0.3); color: white;">加入创作计划</h3>
+                            <p style="font-size: 14px; margin-bottom: 16px; opacity: 0.9;">分享你的千变创意，获得流量扶持与精美周边。</p>
+                            <button class="btn" style="background: white; color: var(--primary); width: 100%;">立即申请</button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color: white;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                        </svg>
+                        千变
+                    </a>
+                    <p>专注于为创意工作者和生活方式爱好者提供灵感展示与交流平台。在这里，每一个创意都值得被看见。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">加入团队</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">每日精选</a></li>
+                        <li><a href="#">热门榜单</a></li>
+                        <li><a href="#">设计师专访</a></li>
+                        <li><a href="#">活动日历</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">社区规范</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 千变创意社区. All rights reserved. Designed for Inspiration.
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
